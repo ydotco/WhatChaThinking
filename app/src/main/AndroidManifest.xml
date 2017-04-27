@@ -25,6 +25,7 @@
             android:label="@string/title_activity_sign_up_hobbies"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignIn" />
+        <activity android:name=".AskQuestion"></activity>
     </application>
 
 </manifest>
