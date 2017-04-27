@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "884357474668",
+    "firebase_url": "https://whatuthink-df447.firebaseio.com",
+    "project_id": "whatuthink-df447",
+    "storage_bucket": "whatuthink-df447.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884357474668:android:4ef64b0ef9e430aa",
+        "android_client_info": {
+          "package_name": "ydotco.whatchathinking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884357474668-71d2rccsacpcgglf5kreoptq4j0dun3o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ydotco.whatchathinking",
+            "certificate_hash": "4b7321a841f5f519c68f1dbdd779ffb126a98dc2"
+          }
+        },
+        {
+          "client_id": "884357474668-sahsunc6iv74kt0bqfricojqeb0ikoe1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHYIokFNVrDLTdEgxw4TLIKmqyXIeHrjQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884357474668-sahsunc6iv74kt0bqfricojqeb0ikoe1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
