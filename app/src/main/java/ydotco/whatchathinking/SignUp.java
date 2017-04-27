@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -52,8 +53,8 @@ public class SignUp extends AppCompatActivity {
         username= (EditText) findViewById(R.id.etName);
         mail = (EditText) findViewById(R.id.etEmail);
         password = (EditText) findViewById(R.id.etPassword);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button btSubmit = (Button) findViewById(R.id.btSubmit);
+        btSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createAccount(password.getText().toString(),username.getText().toString()); //Create Account

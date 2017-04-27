@@ -20,15 +20,16 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_sign_up" />
+    <include layout="@layout/content_sign_up"
+        android:id="@+id/include" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <Button
+        android:id="@+id/btSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@android:drawable/ic_media_next"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_gravity="top|center_horizontal"
+        android:text="Submit"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|center_horizontal" />
 
 </android.support.design.widget.CoordinatorLayout>
