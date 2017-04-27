@@ -50,7 +50,7 @@ public class SignUp extends AppCompatActivity {
         };
 
         username= (EditText) findViewById(R.id.etName);
-        mail = (EditText) findViewById(R.id.etMail);
+        mail = (EditText) findViewById(R.id.etEmail);
         password = (EditText) findViewById(R.id.etPassword);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

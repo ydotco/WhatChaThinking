@@ -33,7 +33,7 @@
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/etName"
@@ -49,9 +49,9 @@
         android:id="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/etEmail"
+        android:layout_alignStart="@+id/etEmail"
+        android:layout_below="@+id/etEmail"
         android:layout_marginTop="38dp"
         android:ems="10"
         android:hint="password"
