@@ -23,7 +23,8 @@
         <activity
             android:name=".SignUpHobbies"
             android:label="@string/title_activity_sign_up_hobbies"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SignIn"></activity>
     </application>
 
 </manifest>

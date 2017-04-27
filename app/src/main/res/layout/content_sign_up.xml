@@ -33,16 +33,28 @@
 
 
     <EditText
-        android:id="@+id/etMail"
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_alignStart="@+id/etName"
+        android:layout_below="@+id/etName"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:gravity="center"
         android:hint="please enter your email"
-        android:inputType="textNoSuggestions|textEmailAddress"
-        android:layout_below="@+id/etName"
-        android:layout_alignLeft="@+id/etName"
-        android:layout_alignStart="@+id/etName" />
+        android:inputType="textNoSuggestions|textEmailAddress" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textNoSuggestions|textPassword" />
 
 </RelativeLayout>
