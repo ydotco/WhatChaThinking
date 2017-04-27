@@ -3,4 +3,8 @@
     <string name="title_activity_sign_up">SignUp</string>
     <string name="title_activity_sign_up_hobbies">SignUpHobbies</string>
     <string name="auth_failed">Authentication process failed</string>
+    <string name="auth_succeed">Authentication Succeeded</string>
+    <string name="password_string">Password</string>
+    <string name="submit_string">Submit</string>
+    <string name="email_string">Email</string>
 </resources>

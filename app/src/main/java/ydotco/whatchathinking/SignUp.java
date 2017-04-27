@@ -3,7 +3,6 @@ package ydotco.whatchathinking;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,16 +16,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import static android.R.attr.name;
-import static ydotco.whatchathinking.R.id.fab;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class SignUp extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    EditText mail,password,FName, Lname;
 
-    EditText username,mail,password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +31,15 @@ public class SignUp extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Authentication Process//
+        FName = (EditText) findViewById(R.id.etFname);
+        Lname = (EditText) findViewById(R.id.etLname);
+        mail = (EditText) findViewById(R.id.etEmail);
+        password = (EditText) findViewById(R.id.etPassword);
+
+        //Firebase Authentication Part//
         mAuth = FirebaseAuth.getInstance();
+
+        //Must stay, Need To Check What it does..//
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -50,35 +54,52 @@ public class SignUp extends AppCompatActivity {
             }
         };
 
-        username= (EditText) findViewById(R.id.etName);
-        mail = (EditText) findViewById(R.id.etEmail);
-        password = (EditText) findViewById(R.id.etPassword);
         Button btSubmit = (Button) findViewById(R.id.btSubmit);
         btSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createAccount(password.getText().toString(),username.getText().toString()); //Create Account
-
-                //Forward the activity to signup hobbies//
-                Intent intent = new Intent(getApplicationContext(),SignUpHobbies.class);
-                startActivity(intent);
+                //Register the account to Firebase//
+                signUpAccount(mail.getText().toString(), password.getText().toString());
             }
         });
     }
 
-    private void createAccount(String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
+    public void signUpAccount(String mail, String password){
+        mAuth.createUserWithEmailAndPassword(mail, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("SignUp New User", "createUserWithEmail:onComplete:" + task.isSuccessful());
+                        Log.d("create account", "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Toast.makeText(SignUp.this, R.string.auth_failed,
-                                    Toast.LENGTH_SHORT).show();
+                            //Regestration Failed//
+                            Toast.makeText(getApplicationContext(),R.string.auth_failed, Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            //Registretion Succeeded - the user is now loged in//
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(FName.getText().toString()+" "+Lname.getText().toString()).build();
+                                        user.updateProfile(profileUpdates); //Update DisplayName
+
+                            //Forward the activity to signup hobbies//
+                            Intent intent = new Intent(getApplicationContext(),SignUpHobbies.class);
+                            intent.putExtra("UID", user.getUid());
+                            startActivity(intent);
                         }
                     }
                 });
