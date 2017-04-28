@@ -26,9 +26,6 @@ public class AskQuestion extends AppCompatActivity {
             public void onClick(View v) {
                 sendQuestion(Question.getText().toString(), Option1.getText().toString(), Option2.getText().toString());
                 //The Question Saved To DB And Now The Client Waits For Response//
-
-
-
             }
         });
     }
