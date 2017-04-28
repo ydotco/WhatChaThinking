@@ -1,9 +1,9 @@
 package ydotco.whatchathinking;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -24,8 +24,6 @@ public class SignUpHobbies extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_hobbies);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         init();
         setClick();
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -37,9 +35,9 @@ public class SignUpHobbies extends AppCompatActivity implements View.OnClickList
                //add to firebase here
                 addToServer();
                 Toast.makeText(SignUpHobbies.this, hobbies.toString(), Toast.LENGTH_SHORT).show();
-                // Intent intent =new Intent(getApplicationContext(),nameOfNextClass.class);
-                //finish();
-                //startActivity(intent);
+                Intent intent =new Intent(getApplicationContext(),AskQuestion.class);
+                finish();
+                startActivity(intent);
             }
         });
     }

@@ -99,6 +99,7 @@ public class SignIn extends AppCompatActivity {
                                 //***********************Forward to the next Activity After Loged in!!***********************//
 
                                 Intent intent = new Intent(getApplicationContext(), AskQuestion.class);
+                                finish();
                                 startActivity(intent);
                             }
                         }

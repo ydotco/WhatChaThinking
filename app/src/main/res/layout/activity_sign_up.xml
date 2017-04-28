@@ -5,20 +5,34 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ydotco.whatchathinking.SignUp">
+    tools:context="ydotco.whatchathinking.SignUp"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/white_square_for_background_of_text_lines"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="9dp"
+        android:layout_marginStart="9dp" />
 
     <EditText
         android:id="@+id/etFname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
         android:ems="7"
         android:gravity="center"
         android:hint="First Name"
         android:inputType="text"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="107dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_alignBaseline="@+id/etLname"
         android:layout_alignBottom="@+id/etLname"
         android:layout_alignParentLeft="true"
@@ -34,52 +48,58 @@
         android:inputType="text"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="107dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="14dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
         android:layout_above="@+id/etEmail"
-        android:layout_toRightOf="@+id/etFname"
-        android:layout_toEndOf="@+id/etFname"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="19dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Email"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
         android:inputType="textNoSuggestions|textEmailAddress"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="107dp" />
+        tools:layout_editor_absoluteY="107dp"
+        android:layout_above="@+id/etPassword"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btSubmit"
-        android:layout_alignLeft="@+id/etEmail"
-        android:layout_alignStart="@+id/etEmail"
-        android:layout_marginBottom="100dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Password"
         android:inputType="textNoSuggestions|textPassword"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="200dp" />
+        tools:layout_editor_absoluteY="200dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:layout_above="@+id/btSubmit"
+        android:layout_alignLeft="@+id/etEmail"
+        android:layout_alignStart="@+id/etEmail" />
 
     <Button
         android:id="@+id/btSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center_horizontal"
-        android:text="Submit"
+        android:layout_marginBottom="63dp"
+        android:background="@drawable/submit"
         app:layout_anchorGravity="bottom|center_horizontal"
-        tools:layout_editor_absoluteY="343dp"
         tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="343dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp" />
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

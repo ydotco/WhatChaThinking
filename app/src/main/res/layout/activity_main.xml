@@ -4,27 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="ydotco.whatchathinking.MainActivity">
 
     <Button
         android:id="@+id/btSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SignUp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/signup_button"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="298dp"
         android:layout_above="@+id/btSignIn"
         android:layout_alignLeft="@+id/btSignIn"
-        android:layout_alignStart="@+id/btSignIn"
-        android:layout_marginBottom="55dp" />
+        android:layout_alignStart="@+id/btSignIn" />
 
     <Button
         android:id="@+id/btSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SignIn"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/log_in_button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="195dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
